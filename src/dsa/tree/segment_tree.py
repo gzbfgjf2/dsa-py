@@ -48,10 +48,6 @@ class ST:
     def set(self, i, j, val, ti, tj, idx=1):
         mid = (ti + tj + 1) // 2
         right_idx = self.get_right_indx(idx, ti, mid)
-        if j <= ti or tj <= i:
-            # must have
-            self.push(ti, tj, idx, right_idx)
-            return
         if i <= ti and tj <= j:
             self.lazy[idx] = val
         self.push(ti, tj, idx, right_idx)
